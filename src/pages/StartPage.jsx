@@ -6,7 +6,7 @@ import Banner from '../components/Banner';
 
 const StartPage = () => {
   return (
-    <div>
+    <div className=''>
       <Banner />
       <div className="mt-20"></div>
         <Offering />

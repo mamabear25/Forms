@@ -3,7 +3,7 @@ import React from "react";
 const Warning = () => {
 
     return (
-        <div className="mb-6 flex items-start bg-warningColor text-black p-6 rounded-md max-w-8xl mx-auto text-md">
+        <div className="mb-6 flex items-start bg-warningColor text-black p-6 rounded-md max-w-6xl mx-auto text-md">
             <div className="flex-shrink-0">
             <svg
                 className="w-6 h-6 text-red-700 mr-3"
