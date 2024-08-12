@@ -13,11 +13,11 @@ const EmploymentDets = () => {
     };
 
     return (
-        <div>
-            <h2 className="text-lg font-bold mt-8">Employment Status</h2>
+        <div className="bg-formColor p-10 text-lg">
+            <h2 className="text-[2.5rem] font-semibold mt-8 mb-10 ">Employment Status</h2>
             
             <div className="mt-4">
-                <label htmlFor="fullTimeEducation" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="fullTimeEducation" className="block font-medium text-gray-700">
                     Prior to enrolment I was in full-time Education? <span className="text-red-600">*</span>
                 </label>
                 <select
@@ -26,14 +26,14 @@ const EmploymentDets = () => {
                     required
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 >
-                    <option value="" disabled>--Please Select--</option>
+                    <option value="" disabled selected>--Please Select--</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
             </div>
 
             <div className="mt-4 max-w-md">
-                <label htmlFor="employmentStatus" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="employmentStatus" className="block font-medium text-gray-700">
                     Please tell us your employment status <span className="text-red-600">*</span>
                 </label>
                 <select
@@ -45,8 +45,9 @@ const EmploymentDets = () => {
                     onChange={handleEmploymentChange}
                 >
                     <option value="" disabled>--Please Select--</option>
-                    <option value="employed">Employed</option>
-                    <option value="unemployed">Unemployed</option>
+                    <option value="employed">In paid employment</option>
+                    <option value="unemployed">Not in paid employment, looking for work and available to start work</option>
+                    <option value="unemployed">Not in paid employment, not looking for work and/or available to start work</option>
                 </select>
             </div>
 
@@ -54,7 +55,7 @@ const EmploymentDets = () => {
             {employmentStatus === 'employed' && (
                 <div className="flex gap-6 mt-4">
                 <div className="flex-1">
-                    <span className="block text-sm font-medium text-gray-700">Are you self-employed? <span className="text-red-600">*</span></span>
+                    <span className="block font-medium text-gray-700">Are you self-employed? <span className="text-red-600">*</span></span>
                     <div className="mt-2 flex items-center space-x-4 border p-2">
                         <div className="flex items-center">
                             <input
@@ -66,7 +67,7 @@ const EmploymentDets = () => {
                                 onChange={handleSelfEmployedChange}
                                 className="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"
                             />
-                            <label htmlFor="selfEmployedYes" className="ml-2 block text-sm font-medium text-gray-700">
+                            <label htmlFor="selfEmployedYes" className="ml-2 block font-medium text-gray-700">
                                 Yes
                             </label>
                         </div>
@@ -80,14 +81,14 @@ const EmploymentDets = () => {
                                 onChange={handleSelfEmployedChange}
                                 className="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"
                             />
-                            <label htmlFor="selfEmployedNo" className="ml-2 block text-sm font-medium text-gray-700">
+                            <label htmlFor="selfEmployedNo" className="ml-2 block font-medium text-gray-700">
                                 No
                             </label>
                         </div>
                     </div>
                 </div>
                 <div className="flex-1">
-                    <label htmlFor="hoursPerWeek" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="hoursPerWeek" className="block font-medium text-gray-700">
                         Hours per week? <span className="text-red-600">*</span>
                     </label>
                     <select
@@ -97,9 +98,10 @@ const EmploymentDets = () => {
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     >
                         <option value="" disabled>--Please Select--</option>
-                        <option value="fullTime">Full Time</option>
-                        <option value="partTime">Part Time</option>
-                        <option value="other">Other</option>
+                        <option value="fullTime">Employed for 0 - 10 hours per week</option>
+                        <option value="parttime">Employed for 11 - 20 hours per week</option>
+                        <option value="fullTime">Employed for 21 - 30 hours per week</option>
+                        <option value="fullTime">Employed for 31+ hours per week</option>
                     </select>
                 </div>
             </div>
@@ -108,7 +110,7 @@ const EmploymentDets = () => {
 
             {employmentStatus === 'unemployed' && (
                 <div className="mt-4">
-                    <label htmlFor="lengthUnemployed" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="lengthUnemployed" className="block font-medium text-gray-700">
                         How long have you been unemployed? <span className="text-red-600">*</span>
                     </label>
                     <select
@@ -117,16 +119,18 @@ const EmploymentDets = () => {
                         required
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     >
-                        <option value="" disabled>--Please Select--</option>
+                        <option value="" disabled selected>--Please Select--</option>
                         <option value="lessThan6Months">Less than 6 months</option>
-                        <option value="6To12Months">6 to 12 months</option>
-                        <option value="moreThan12Months">More than 12 months</option>
+                        <option value="6To12Months">6 to 11 months</option>
+                        <option value="6To12Months">12 to 23 months</option>
+                        <option value="6To12Months">24 to 35 months</option>
+                        <option value="moreThan12Months">Over 36 months</option>
                     </select>
                 </div>
             )}
             <div className="flex gap-6">
                 <div className="flex-1 mt-4">
-                    <label htmlFor="receiveBenefits" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="receiveBenefits" className="block font-medium text-gray-700">
                         Do you receive any benefits? <span className="text-red-600">*</span>
                     </label>
                     <select
@@ -135,9 +139,11 @@ const EmploymentDets = () => {
                         required
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     >
-                        <option value="" disabled>--Please Select--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                        <option value="" disabled selected>Please Select...</option>
+                        <option value="yes">Learner is in receipt of Job Seekers Allowance (JSA)</option>
+                        <option value="yes">Learner is in receipt of Universal Credit</option>
+                        <option value="yes">Learner is in receipt of Employment and Support Allowance (all categories)</option>
+                        <option value="yes">Learner is in receipt of other state benefits</option>
                     </select>
                 </div>
                 <div className="flex-1 mt-4 flex items-center">
@@ -147,7 +153,7 @@ const EmploymentDets = () => {
                         name="noBenefits"
                         className="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"
                     />
-                    <label htmlFor="noBenefits" className="ml-2 text-sm font-medium text-gray-700">
+                    <label htmlFor="noBenefits" className="ml-2 font-medium text-gray-700">
                         I receive no benefits <span className="text-red-600">*</span>
                     </label>
                 </div>

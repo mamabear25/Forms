@@ -39,28 +39,27 @@ const HFive = () => {
 
     return (
         <div>
-            <div className="container mx-auto mt-20 p-4 bg-white rounded">
+            <div className="container mx-auto mt-20 p-4 bg-white rounded text-lg">
                 <Offering />
                 <div className='mt-4 p-4 mb-6'>
                 <h2 className='text-lg container' > / Personal Details / Further Details / Next of Kin / Emergency Contact / Employment / <span className='font-bold'>Declaration</span></h2>
                 </div>
 
-                <h2>Fee Information</h2>
-                <p>Please note, the fee for this course is $4000</p>
-                <form id="preEnrolmentForm">
+                <form id="preEnrolmentForm" className='bg-formColor p-10'>
+                    <h2 className='text-[2.5rem] font-semibold mb-10'>Fee Information</h2>
                     <div className="mt-4">
-                        <label htmlFor="paymentMethod" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="paymentMethod" className="block font-medium text-gray-700">
                             How do you intend to pay your tuition fee (Select one) <span className="text-red-600">*</span>
                         </label>
                         <select id="paymentMethod" name="paymentMethod" required className="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                             <option value="" disabled selected>--Please Select--</option>
-                            <option value="loan">Student Loan</option>
-                            <option value="personal">Personal Payment</option>
+                            <option value="loan">I am paying my own fees</option>
+                            <option value="personal">My course is being funded through a loan from the Student Loan Company (SLC)</option>
                         </select>
                     </div>
                     {/* <p className="mt-2">The evidence upload feature has been provided so that you can upload proof of a student loan or Advanced Learner Loan.</p>
                     <div className="mt-4">
-                        <label htmlFor="fileUpload" className="block text-sm font-medium text-gray-700">Upload file</label>
+                        <label htmlFor="fileUpload" className="block font-medium text-gray-700">Upload file</label>
                         <input
                             type="file"
                             id="fileUpload"
@@ -99,8 +98,8 @@ const HFive = () => {
                                 <tbody className="bg-white divide-y divide-gray-200">
                                     {files.map(file => (
                                         <tr key={file.name}>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{file.name}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
+                                            <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{file.name}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-500">
                                                 <button
                                                     type="button"
                                                     onClick={() => handleRemoveFile(file.name)}

@@ -384,7 +384,6 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                             <option value="yes">Level 5: Foundation course at HE level</option>
                             <option value="yes">Level 5: Other Qualification at Level 5</option>
                             <option value="yes">Level 5: UK ordinary (non-honors) first degree</option>
-
                             <option value="no">Miss</option>
                         </select>
                     </div>
@@ -406,7 +405,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="no">No</option>
                             </select>
                         </div>
-                        <div className="mt-4">
+                        <div className="mt-12">
                             <label htmlFor="details" className="block font-medium text-gray-700">
                                 If yes, please detail <span className="text-black">*</span>
                             </label>
@@ -417,7 +416,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 onChange={handleChange}
                                 name="details"
                                 placeholder="Enter details here"
-                                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                                className=" p-2 block w-full border border-gray-300 rounded-md"
                                 required={isEnrolled === 'yes'}
                             />
                         </div>
