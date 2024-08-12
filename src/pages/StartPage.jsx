@@ -2,14 +2,16 @@ import React from 'react';
 import StartButton from '../components/Heform/StartButton';
 import Offering from '../components/OfferingDetails';
 import Warning from '../components/Heform/Warning';
+import Banner from '../components/Banner';
 
 const StartPage = () => {
   return (
     <div>
+      <Banner />
+      <div className="mt-20"></div>
         <Offering />
-    <div id="start" className="p-6 max-w-7xl mx-auto bg-white shadow-lg rounded-lg">
+    <div id="start" className="p-6 max-w-8xl mx-auto bg-white shadow-lg rounded-lg">
         <Warning />
-      <hr className="mb-6 border-gray-300" />
 
       <p className="mb-6 text-gray-700">
         Thank you for your interest in applying with us. If you wish to ask any questions during your application, please email&nbsp;
@@ -21,7 +23,7 @@ const StartPage = () => {
         <a href="https://www.newcollegedurham.ac.uk/privacynotices/" className="text-blue-600 underline hover:text-blue-800"> in detail here</a>.
       </p>
 
-      <p className="font-bold text-gray-800 mb-4">You will need:</p>
+      <p className="font-bold text-gray-800 mb-4">Before you beign, please ensure you have the following information available in order to make a successful submission:</p>
       <ul className="list-disc pl-5 mb-6 text-gray-700">
         <li className="mb-2">Your details (name, address, contact details)</li>
         <li className="mb-2">If you have any disabilities or learning needs, and details about those</li>
