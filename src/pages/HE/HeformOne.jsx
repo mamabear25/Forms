@@ -227,11 +227,11 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         <option value="Rented">1 - Private sector Halls</option>
                         <option value="ren">2 - Provider owned/maintained</option>
                         <option value="tuts">3 - Parental/guardian home</option>
-                        <option value="Rented">4 - Other</option>
-                        <option value="Rented">5 - Not in attendance at the college</option>
-                        <option value="Rented">6 - Own residence</option>
-                        <option value="Rented">7 - Other rented accommodation</option>
-                        <option value="Rented">8 - Not known</option>
+                        <option value="sf">4 - Other</option>
+                        <option value="Rentvbed">5 - Not in attendance at the college</option>
+                        <option value="Renserwted">6 - Own residence</option>
+                        <option value="Rensfgdghfted">7 - Other rented accommodation</option>
+                        <option value="Rentdvdfged">8 - Not known</option>
                     </select>
                 </div>
                 <div className="mb-6 ">
