@@ -39,7 +39,7 @@ const HFive = () => {
 
     return (
         <div>
-            <div className="container mx-auto mt-8 p-4 bg-white rounded">
+            <div className="container mx-auto mt-20 p-4 bg-white rounded">
                 <Offering />
                 <div className='mt-4 p-4 mb-6'>
                 <h2 className='text-lg container' > / Personal Details / Further Details / Next of Kin / Emergency Contact / Employment / <span className='font-bold'>Declaration</span></h2>

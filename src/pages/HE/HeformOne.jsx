@@ -96,16 +96,13 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
     }, [showErrors, formData]);
 
     return (
-        <div className='text-lg mx-auto'>
+        <div className='text-lg mx-auto mt-20'>
             <Offering />
-
             <div className='mt-4'>
-
-            <h2 className='text-lg container mx-auto' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
-
+                <h2 className='text-lg container' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
             </div>
             <div className=" mx-auto mt-4 p-10 bg-formColor" style={{maxWidth: '90vw'}} >
-                <h2 className="text-[2rem] font-bold mb-4">Personal Details</h2>
+                <h2 className="text-[2.5rem] font-semibold mb-4">Personal Details</h2>
                 <p>Please note all fields with <span className="text-red-600">*</span> are required</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="mt-4">

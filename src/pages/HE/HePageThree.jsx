@@ -3,7 +3,7 @@ import Offering from '../../components/OfferingDetails';
 
 const HThree = () => {
     return (
-        <div className="container mx-auto mt-8 p-4 bg-white rounded">
+        <div className="container mx-auto mt-20 p-4 bg-white rounded">
             <Offering />
             <div className='mt-4 p-4 mb-6'>
                 <h2 className='text-lg container' > / Personal Details / Further Details / <span className='font-bold'>Next of Kin / Emergency Contact</span> /Employment / Declaration</h2>

@@ -95,7 +95,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
 
     return (
         <div>
-            <div className="container mx-auto mt-8 p-4 bg-white rounded">
+            <div className="container mx-auto mt-20 p-4 bg-white rounded">
                 <Offering />
                 <div className='mt-4 p-4 mb-6'>
                 <h2 className='text-lg container' > / Personal Details / <span className='font-bold'>Further Details</span> / Next of Kin / Emergency Contact /Employment / Declaration</h2>
