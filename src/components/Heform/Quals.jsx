@@ -16,7 +16,7 @@ const qualifications = [
 const QualsonEntry
  = () => {
     return (
-        <div className="p-6 max-w-7xl mx-auto bg-white shadow-md rounded-lg">
+        <div className="p-6 mx-auto bg-white shadow-md rounded-lg" style={{maxWidth: '90vw'}}>
     <div className="overflow-x-auto">
         <table className="w-full table-fixed divide-y divide-gray-200">
             <thead className="bg-gray-50">

@@ -188,7 +188,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                         advancement of equality and diversity.
                     </p>
                     {/* <FurtherDets /> */}
-                    <div className=" max-w-7xl mx-auto bg-white rounded-lg">
+                    <div className=" mx-auto bg-white rounded-lg" style={{maxWidth: '90vw'}}>
             <div className="mt-4">
                 <label htmlFor="disability" className="block text-sm font-medium text-gray-700">
                     Do you have any disabilities or learning difficulties? <span className="text-red-600">*</span>

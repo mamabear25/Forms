@@ -7,6 +7,7 @@ import SixteenNew from './pages/NewSix';
 import SixProgressor from './pages/SixPregressor';
 import StartPage from './pages/StartPage';
 import MultiStepForm from './components/FormLogic';
+import Test from './pages/HE/test';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/fe-six-new" element={<SixteenNew />} />
           <Route path="/fe-six-progressor" element={<SixProgressor />} />
           <Route path="/he-start" element={<StartPage />} />
+          <Route path="/test" element={<Test />} />
+
           {/* <Route path="/he-pagetwo" element={<HTwo />} />
           <Route path="/he-pagethree" element={<HThree />} />
           <Route path="/he-pagefour" element={<HFour />} />

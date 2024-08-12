@@ -3,7 +3,7 @@ import AddressSearch from '../../components/Heform/PostcodeSearch';
 import TermTimeAddress from '../../components/Heform/TermTime';
 import Offering from '../../components/OfferingDetails';
 
-const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
+const Test = ({ formData, setFormData, validateStep, showErrors, }) => {
     const [errors, setErrors] = useState([]);
 
     const validate = () => {
@@ -96,15 +96,15 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
     }, [showErrors, formData]);
 
     return (
-        <div className='text-lg mx-auto'>
+        <div className='text-lg' style={{maxWidth: '90vw'}}>
             <Offering />
 
             <div className='mt-4'>
 
-            <h2 className='text-lg container mx-auto pl-4' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
+            <h2 className='text-lg container' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
 
             </div>
-            <div className="container mx-auto mt-4 p-10 bg-formColor" >
+            <div className="container mx-auto mt-4 p-4 bg-formColor" >
                 <h2 className="text-[2rem] font-bold mb-4">Personal Details</h2>
                 <p>Please note all fields with <span className="text-red-600">*</span> are required</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -186,7 +186,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                             />
                         </div>
                     </div>
-                    <div className="flex-1 min-w-[200px] mt-1 py-2">
+                    <div className="flex-1 min-w-[200px]">
                         <label htmlFor="legalSex" className="p-2 blocks font-medium text-gray-700 required">
                             Legal Sex <span className="text-red-600">*</span>
                         </label>
@@ -325,4 +325,4 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
     );
 };
 
-export default HForm1;
+export default Test;

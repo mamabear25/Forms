@@ -8,7 +8,7 @@ const TermTimeAddress = () => {
     };
 
     return (
-        <div className="p-6 max-w-7xl mx-auto bg-formColor rounded-lg ">
+        <div className="p-6 mx-auto bg-formColor rounded-lg " style={{maxWidth: '90vw'}}>
             <h3 className="text-xl font-semibold mb-4">Is your term time address different to your home address? <span className="text-red-600">*</span></h3>
 
             <div className="space-y-4 border-l border-r border-gray-200">
@@ -45,7 +45,7 @@ const TermTimeAddress = () => {
 
             {/* Conditionally display term-time address fields */}
             {isSameAddress === 'no' && (
-                <div className="p-6 max-w-7xl mx-auto">
+                <div className="p-6 mx-auto" style={{maxWidth: '90vw'}}>
                     <div className="mb-6">
                         <h3 className="text-xl font-semibold">
                             Term Time Address

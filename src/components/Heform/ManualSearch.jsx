@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const ManualSearch = () => {
 
     return (
-        <div className="p-6 max-w-4xl mx-auto">
+        <div className="p-6 mx-auto" style={{maxWidth: '90vw'}}>
             <div className="mb-6">
                 <h3 className="text-xl font-semibold">
                     Address Search

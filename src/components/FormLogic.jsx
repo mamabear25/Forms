@@ -81,7 +81,7 @@ const MultiStepForm = () => {
     };
 
     return (
-        <div className="p-6 max-w-7xl mx-auto text-md font-bold">
+        <div className="p-6 mx-auto text-lg">
             {renderStep()}
             {errors.length > 0 && (
                 <div className="mt-4 bg-red-100 text-red-700 p-4 rounded">

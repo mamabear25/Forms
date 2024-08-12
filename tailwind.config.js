@@ -13,9 +13,6 @@ module.exports = {
         warningColor: '#fdf3ce',
         navButton: '#0A74D1',
       },
-      fontFamily: {
-        'sans': ['Source Sans Pro', 'sans-serif'], 
-      },
     },
   },
   plugins: [],
