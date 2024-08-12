@@ -3,7 +3,7 @@ import React from "react";
 const Warning = () => {
 
     return (
-        <div className="mb-6 flex items-start bg-warningColor text-black p-6 rounded-md max-w-8xl mx-auto text-md border border-red-300">
+        <div className="mb-6 flex items-start bg-warningColor p-6 rounded-md max-w-8xl mx-auto text-lg border border-red-300">
             <div className="flex-shrink-0">
             <svg
                 className="w-6 h-6 text-red-700 mr-3"
@@ -20,7 +20,7 @@ const Warning = () => {
 
             </div>
             <div className="">
-                <p className="text-gray-800">
+                <p className="">
                     You should only complete this form if you have been sent an offer letter confirming you have a place
                     on this programme. If you do not have an offer and you in this enrolment form it could be considered a fraudulent act.
                 </p>
