@@ -10,40 +10,32 @@ const StartPage = () => {
       <Banner />
       <div className="mt-20"></div>
         <Offering />
-    <div id="start" className="p-6 max-w-8xl mx-auto bg-white shadow-lg rounded-lg">
+      <div id="start" className="p-6 max-w-8xl mx-auto bg-white shadow-lg rounded-lg bg-formColor ml-6 mr-6">
         <Warning />
 
       <p className="mb-6 text-gray-700">
-        Thank you for your interest in applying with us. If you wish to ask any questions during your application, please email&nbsp;
-        <a href="mailto:admissions@newdur.ac.uk" className="text-blue-600 underline hover:text-blue-800">admissions@newdur.ac.uk</a>.
+        Thank you for your interest in applying with us. If you wish to ask any questions during your application, email&nbsp;
+        <a href="mailto:admissions@newdur.ac.uk" className="text-blue-600 no-underline hover:text-blue-800">cishelpdesk@newdur.ac.uk</a> or call <a href="tel:01913754100" className="text-blue-600 no-underline hover:text-blue-800">0191 375 4100</a>.
       </p>
 
       <p className="mb-6 text-gray-700">
-        The information we are collecting from you here will be used to process your application. More information on how your data will be processed by New College Durham can be read 
-        <a href="https://www.newcollegedurham.ac.uk/privacynotices/" className="text-blue-600 underline hover:text-blue-800"> in detail here</a>.
+        The information we are collecting from you here will be used to process your enrolment on your chosen course or programme and we need it to register you with the correct Awarding Body and to provide to our Funding Body the ESFA.
       </p>
 
       <p className="font-bold text-gray-800 mb-4">Before you beign, please ensure you have the following information available in order to make a successful submission:</p>
       <ul className="list-disc pl-5 mb-6 text-gray-700">
-        <li className="mb-2">Your details (name, address, contact details)</li>
-        <li className="mb-2">If you have any disabilities or learning needs, and details about those</li>
-        <li className="mb-2">If you have any unspent criminal convictions</li>
-        <li className="mb-2">For HE students - your personal statement &amp; details of career aspirations and experience</li>
+        <li className="mb-2">Personal details</li>
+        <li className="mb-2">Your residency/nationality information</li>
+        <li className="mb-2">Details about any disabilities or learning difficulties, if applicable.</li>
+        <li className="mb-2">Emergency Contact details such as phone number, email and address</li>
+        <li className="mb-2">Your employment details (length of time you've worked and how many hours per week)</li>
       </ul>
 
-      <p className="mb-6 text-gray-700">
-        If you experience any issues completing our application form, please contact admissions at&nbsp;
-        <a href="mailto:admissions@newdur.ac.uk" className="text-blue-600 underline hover:text-blue-800">admissions@newdur.ac.uk</a> or call 0191 375 4210.
-        <br /><br />
-        If you have technical issues, please try to send us a screenshot to help us diagnose the problem and resolve the issue.
-      </p>
-
-      <p className="mb-6 text-gray-700">
-        Please complete the form and remember to submit it at the end. This web form will remain open for up to 3 hours.
-      </p>
-      <p className="mb-6 text-gray-700">
-        To ensure we guide you to the right place, please answer the following questions:
-      </p>
+      <p className="font-bold text-gray-800 mb-4">Please note the following important information</p>
+      <ul className="list-disc pl-5 mb-6 text-gray-700">
+        <li className="mb-2"><strong>This session will remain active for 40 minutes </strong> before it expires - you will have to start again if the session expires details</li>
+        <li className="mb-2">Remember to click the <strong>Submit button at the end of the form </strong>, otherwise we will not receive your enrolment </li>
+      </ul>
       <div className="">
         <StartButton />
       </div>

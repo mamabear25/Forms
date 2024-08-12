@@ -1,12 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Banner = () => {
     return (
-        <header className="bg-red-500 text-white py-8 text-poppins">
+        <header className="bg-background text-white py-8 text-poppins">
     <div className="container mx-auto flex items-center">
         <div className="flex-shrink-0 h-full">
             <svg
@@ -54,7 +50,7 @@ const Banner = () => {
             </svg>
         </div>
         {/* Center the navigation links */}
-        <h1 className="text-4xl font-bold text-gray-200 ml-4">
+        <h1 className="text-5xl font-bold text-gray-200 ml-4 p-2">
             Higher Education Enrolment Form
         </h1>
     </div>

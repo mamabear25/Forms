@@ -81,7 +81,7 @@ const MultiStepForm = () => {
     };
 
     return (
-        <div className="p-6 max-w-7xl mx-auto">
+        <div className="p-6 max-w-7xl mx-auto text-md font-bold">
             {renderStep()}
             {errors.length > 0 && (
                 <div className="mt-4 bg-red-100 text-red-700 p-4 rounded">
@@ -95,17 +95,17 @@ const MultiStepForm = () => {
             {currentStep < 6 && (
                 <div className="flex space-x-4 mt-6">
                     {currentStep > 1 && (
-                        <button onClick={handleBack} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                            Back
+                        <button onClick={handleBack} className="bg-navButton text-white px-4 py-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            BACK
                         </button>
                     )}
                     {currentStep < 5 ? (
-                        <button onClick={handleNext} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                            Next
+                        <button onClick={handleNext} className="bg-navButton text-white px-4 py-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            NEXT
                         </button>
                     ) : (
                         <div className="flex w-full">
-                            <button onClick={handleSubmit} className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                            <button onClick={handleSubmit} className="bg-navButton text-white px-6 py-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                                 Submit
                             </button>
                         </div>

@@ -53,7 +53,7 @@ const Navbar = () => {
                         <li><a href="#facilities" className="text-lg hover:text-gray-400">OUR FACILITIES</a></li>
                         <li><a href="#employers" className="text-lg hover:text-gray-400">EMPLOYERS</a></li>
                         <li><a href="#contact" className="text-lg hover:text-gray-400">CONTACT US</a></li>
-                        <li><a href="#apply" className="bg-customPink font-bold hover:bg-blue-700 text-black px-6 py-2 rounded text-md">HOW TO APPLY</a></li>
+                        <li><a href="#apply" className="bg-customPink font-bold hover:bg-white text-black px-6 py-2 rounded text-md">APPLY NOW</a></li>
                     </ul>
                 </nav>
             </div>

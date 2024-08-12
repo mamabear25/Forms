@@ -99,14 +99,10 @@ const AddressSearch = ({ formData, setFormData, showErrors }) => {
     };
 
     return (
-        <div className="p-6 max-w-8xl mx-auto">
-            <div className="mb-6">
-                <h3 className="text-xl font-semibold">
-                    Address details (<span>Where you will live while on this course</span>)
-                </h3>
-            </div>
-            <div className="bg-whiterounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">Address Search</h3>
+        <div className="p-6 max-w-8xl mx-auto text-md bg-white">
+            
+            <div className="bg-white border rounded-sm p-6">
+                <h3 className="text-[1.75rem] font-semibold mb-4">Address Search</h3>
                 <div className="flex items-center mb-4">
                     <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 whitespace-nowrap flex-shrink-0">
                         Postcode <span className="text-red-600">*</span>
@@ -118,7 +114,7 @@ const AddressSearch = ({ formData, setFormData, showErrors }) => {
                             type="text"
                             value={postcode}
                             onChange={handlePostcodeChange}
-                            className="p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm w-full max-w-xs"
+                            className="p-3 mb-4 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm w-full max-w-xs"
                         />
                         {error && <p className="text-red-500">{error}</p>}
                         <div className="flex space-x-4 mt-2">
@@ -137,7 +133,7 @@ const AddressSearch = ({ formData, setFormData, showErrors }) => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col items-end space-y-2 mb-4">
+                <div className="flex flex-col items-end space-y-2 mb-4 text-left align-left bg-formColor">
                     <a
                         href="#"
                         className="text-blue-600 hover:text-blue-800"
@@ -150,7 +146,7 @@ const AddressSearch = ({ formData, setFormData, showErrors }) => {
                     </a>
                     <a
                         href="#"
-                        className="text-blue-600 hover:text-blue-800"
+                        className="text-blue-600 hover:text-blue-800 "
                         onClick={(e) => {
                             e.preventDefault();
                             handleManualEntryToggle(); // Toggle manual entry

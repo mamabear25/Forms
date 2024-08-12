@@ -7,7 +7,11 @@ module.exports = {
     extend: {
       colors: {
         customPink: '#feb0c0', // You can name this color anything you like
-        background: '#f1f1f1'
+        background: '#c95a5c',
+        buttonColor: '#f8b2c1',
+        formColor: '#f1f1f1',
+        warningColor: '#fdf3ce',
+        navButton: '#0A74D1',
       },
     },
   },

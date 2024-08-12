@@ -96,18 +96,18 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
     }, [showErrors, formData]);
 
     return (
-        <div>
+        <div className='text-md'>
             <Offering />
             <div className='mt-4 p-4'>
             <h2 className='text-lg container' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
 
             </div>
-            <div className="container mx-auto mt-4 p-4 bg-white rounded">
-                <h1 className="text-xl font-bold mb-4">Personal Details</h1>
+            <div className="container mx-auto mt-4 p-4 bg-formColor rounded">
+                <h2 className="text-[2rem] font-bold mb-4">Personal Details</h2>
                 <p>Please note all fields with <span className="text-red-600">*</span> are required</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="mt-4">
-                        <label htmlFor="title" className="block text-sm font-medium text-gray-700 required">
+                        <label htmlFor="title" className="block text-md font-medium text-gray-700 required">
                             Title <span className="text-red-600">*</span>
                         </label>
                         <select
@@ -123,7 +123,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         </select>
                     </div>
                     <div className="mt-4">
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 required">
+                        <label htmlFor="firstName" className="block text-md font-medium text-gray-700 required">
                             First Name <span className="text-red-600">*</span>
                         </label>
                         <input
@@ -138,7 +138,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         />
                     </div>
                     <div className="mt-4">
-                        <label htmlFor="surname" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="surname" className="block text-md font-medium text-gray-700">
                             Surname <span className="text-red-600">*</span>
                         </label>
                         <input
@@ -154,7 +154,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                 </div>
                 <div className="mt-4">
                     <p>If you have known with a different surname please provide this in the box below <span className="text-red-600">*</span></p>
-                    <label htmlFor="previousSurname" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="previousSurname" className="block text-md font-medium text-gray-700">
                         Previous Surname
                     </label>
                     <input
@@ -185,7 +185,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         </div>
                     </div>
                     <div className="flex-1 min-w-[200px]">
-                        <label htmlFor="legalSex" className="p-2 block text-sm font-medium text-gray-700 required">
+                        <label htmlFor="legalSex" className="p-2 block text-md font-medium text-gray-700 required">
                             Legal Sex <span className="text-red-600">*</span>
                         </label>
                         <select
@@ -193,19 +193,19 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                             name="legalSex"
                             value={formData.legalSex}
                             onChange={handleChange}
-                            className="w-full p-2 border border-gray-500 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-2 border mb-4 border-gray-500 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
-                            <option value="" disabled>Select...</option>
+                            <option value="" disabled selected>--Please Select--</option>
                             <option value="Mr">M</option>
                             <option value="Miss">F</option>
                         </select>
-                        <p className='block text-sm font-medium text-gray-700'>
+                        <p className='block text-md font-medium text-gray-700'>
                             Please note due to funding regulations, we are required to capture your legal sex. This is your sex as it appears on your passport
                         </p>
                     </div>
                 </div>
-                <div className="mt-4">
-                    <label htmlFor="accommodationType" className="block text-sm font-medium text-gray-700">
+                <div className="mt-4 mb-4">
+                    <label htmlFor="accommodationType" className="block text-md font-medium text-gray-700">
                         Select what describes your type of accommodation <span className="text-red-600">*</span>
                     </label>
                     <select
@@ -213,22 +213,27 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         name="accommodationType"
                         value={formData.accommodationType}
                         onChange={handleChange}
-                        className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                        className="mt-1 p-3 block w-full border border-gray-300 rounded-md"
                     >
-                        <option value="" disabled>Select...</option>
+                        <option value="" disabled>--Please Select--</option>
                         <option value="Rented">Rented</option>
                         <option value="Owned">Owned</option>
                     </select>
                 </div>
+                <div className="mb-6 ">
+                <h4 className="text-[1.5rem] font-semibold">
+                    Address details (<span>Where you will live while on this course</span>)
+                </h4>
+            </div>
                 <AddressSearch formData={formData} setFormData={setFormData} />
                 <TermTimeAddress formData={formData} setFormData={setFormData} showErrors={showErrors} />
                 <div>
-            <h2 className="text-lg font-bold mt-8">
+            <h2 className="ml-4 text-lg font-bold mt-8">
                 You must provide at least one phone detail below:
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="mt-4">
-                    <label htmlFor="mobile" className="block text-sm font-medium text-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                <div className="mt-2">
+                    <label htmlFor="mobile" className="block text-md font-medium text-gray-700">
                         Mobile Number (e.g. 07...) <span className="text-black">*</span>
                     </label>
                     <input
@@ -241,11 +246,11 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     />
                     {showErrors && errors.includes('Mobile Number must be in the format 07123456789.') && (
-                        <p className="text-red-600 text-sm mt-1">Mobile Number must be in the valid format 07...</p>
+                        <p className="text-red-600 text-md mt-1">Mobile Number must be in the valid format 07...</p>
                     )}
                 </div>
-                <div className="mt-4">
-                    <label htmlFor="homephone" className="block text-sm font-medium text-gray-700">
+                <div className="mt-2">
+                    <label htmlFor="homephone" className="block text-md font-medium text-gray-700">
                         Contact Number (Home Telephone) <span className="text-black">*</span>
                     </label>
                     <input
@@ -258,12 +263,12 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     />
                     {showErrors && errors.includes('Home Telephone must be a valid UK landline number.') && (
-                        <p className="text-red-600 text-sm mt-1">Home Telephone must be a valid UK landline number.</p>
+                        <p className="text-red-600 text-md mt-1">Home Telephone must be a valid UK landline number.</p>
                     )}
                 </div>
             </div>
-            <div className="mt-4">
-                <label htmlFor="emergencyEmail" className="block text-sm font-medium text-gray-700">
+            <div className=" p-4">
+                <label htmlFor="emergencyEmail" className="block text-md font-medium text-gray-700">
                     Email <span className="text-red-600">*</span>
                 </label>
                 <input
@@ -276,14 +281,14 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 />
                 {showErrors && errors.includes('Emergency Email is required.') && (
-                    <p className="text-red-600 text-sm mt-1">Emergency Email is required.</p>
+                    <p className="text-red-600 text-md mt-1">Emergency Email is required.</p>
                 )}
                 {showErrors && errors.includes('Emergency Email must be a valid email address.') && (
-                    <p className="text-red-600 text-sm mt-1">Emergency Email must be a valid email address.</p>
+                    <p className="text-red-600 text-md mt-1">Emergency Email must be a valid email address.</p>
                 )}
             </div>
-            <div className="mt-4">
-                <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
+            <div className=" p-4">
+                <label htmlFor="Email" className="block text-md font-medium text-gray-700">
                     Email (enter again) <span className="text-red-600">*</span>
                 </label>
                 <input
@@ -296,10 +301,10 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 />
                 {showErrors && errors.includes('Email (enter again) is required.') && (
-                    <p className="text-red-600 text-sm mt-1">Email (enter again) is required.</p>
+                    <p className="text-red-600 text-md mt-1">Email (enter again) is required.</p>
                 )}
                 {showErrors && errors.includes('Emails do not match.') && (
-                    <p className="text-red-600 text-sm mt-1">Emails do not match.</p>
+                    <p className="text-red-600 text-md mt-1">Emails do not match.</p>
                 )}
             </div>
         </div>

@@ -40,7 +40,7 @@
 //             <h2 className="text-lg font-bold mt-8">You must provide at least one contact details below:</h2>
 //             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 //                 <div className="mt-4">
-//                     <label for="mobile" className="block text-sm font-medium text-gray-700">Mobile Number eg(07..) <span className="text-black">*</span></label>
+//                     <label for="mobile" className="block font-medium text-gray-700">Mobile Number eg(07..) <span className="text-black">*</span></label>
 //                     <input type="tel" 
 //                     id="mobile" 
 //                     value={formData.mobile}
@@ -50,7 +50,7 @@
 //                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
 //                 </div>
 //                 <div className="mt-4">
-//                     <label for="homephone" className="block text-sm font-medium text-gray-700">Contact Number (Home Telephone) <span className="text-black">*</span></label>
+//                     <label for="homephone" className="block font-medium text-gray-700">Contact Number (Home Telephone) <span className="text-black">*</span></label>
 //                     <input
 //                     value={formData.homephone}
 //                     onChange={handleChange}
@@ -59,14 +59,14 @@
 //                 </div>  
 //             </div>
 //             <div className="mt-4">
-//                 <label for="emergencyEmail" className="block text-sm font-medium text-gray-700">Email <span className="text-red-600">*</span></label>
+//                 <label for="emergencyEmail" className="block font-medium text-gray-700">Email <span className="text-red-600">*</span></label>
 //                 <input type="email"
 //                 value={formData.emergencyEmail}
 //                 onChange={handleChange} 
 //                 id="emergencyEmail" name="emergencyEmail" placeholder=" email" required className="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
 //             </div>
 //             <div className="mt-4">
-//                 <label for="Email" className="block text-sm font-medium text-gray-700">Email (enter again) <span className="text-red-600">*</span></label>
+//                 <label for="Email" className="block font-medium text-gray-700">Email (enter again) <span className="text-red-600">*</span></label>
 //                 <input type="email" 
 //                 value={formData.Email}
 //                 onChange={handleChange}
@@ -115,13 +115,13 @@ const ContactDetails = ({ formData, setFormData, showErrors }) => {
     }, [showErrors, formData]);
 
     return (
-        <div>
+        <div className="text-md">
             <h2 className="text-lg font-bold mt-8">
                 You must provide at least one contact detail below:
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="mt-4">
-                    <label htmlFor="mobile" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="mobile" className="block font-medium text-gray-700">
                         Mobile Number (e.g. 07..) <span className="text-red-600">*</span>
                     </label>
                     <input
@@ -135,11 +135,11 @@ const ContactDetails = ({ formData, setFormData, showErrors }) => {
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     />
                     {showErrors && errors.includes('Mobile Number is required.') && (
-                        <p className="text-red-600 text-sm mt-1">Mobile Number is required.</p>
+                        <p className="text-red-600 mt-1">Mobile Number is required.</p>
                     )}
                 </div>
                 <div className="mt-4">
-                    <label htmlFor="homephone" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="homephone" className="block font-medium text-gray-700">
                         Contact Number (Home Telephone) <span className="text-red-600">*</span>
                     </label>
                     <input
@@ -153,12 +153,12 @@ const ContactDetails = ({ formData, setFormData, showErrors }) => {
                         className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                     />
                     {showErrors && errors.includes('Contact Number (Home Telephone) is required.') && (
-                        <p className="text-red-600 text-sm mt-1">Contact Number (Home Telephone) is required.</p>
+                        <p className="text-red-600 mt-1">Contact Number (Home Telephone) is required.</p>
                     )}
                 </div>
             </div>
             <div className="mt-4">
-                <label htmlFor="emergencyEmail" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="emergencyEmail" className="block font-medium text-gray-700">
                     Email <span className="text-red-600">*</span>
                 </label>
                 <input
@@ -172,11 +172,11 @@ const ContactDetails = ({ formData, setFormData, showErrors }) => {
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 />
                 {showErrors && errors.includes('Emergency Email is required.') && (
-                    <p className="text-red-600 text-sm mt-1">Emergency Email is required.</p>
+                    <p className="text-red-600 mt-1">Emergency Email is required.</p>
                 )}
             </div>
             <div className="mt-4">
-                <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="Email" className="block font-medium text-gray-700">
                     Email (enter again) <span className="text-red-600">*</span>
                 </label>
                 <input
@@ -190,7 +190,7 @@ const ContactDetails = ({ formData, setFormData, showErrors }) => {
                     className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                 />
                 {showErrors && errors.includes('Email (enter again) is required.') && (
-                    <p className="text-red-600 text-sm mt-1">Email (enter again) is required.</p>
+                    <p className="text-red-600 mt-1">Email (enter again) is required.</p>
                 )}
             </div>
         </div>
