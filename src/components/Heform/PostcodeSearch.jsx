@@ -99,62 +99,69 @@ const AddressSearch = ({ formData, setFormData, showErrors }) => {
     };
 
     return (
-        <div className="p-6 max-w-8xl mx-auto text-md bg-white">
+        <div className="p-6 max-w-8xl mx-auto text-lg bg-white">
             
-            <div className="bg-white rounded-sm p-6">
+            <div className="bg-white rounded-sm p-2">
                 <h3 className="text-[1.75rem] font-semibold mb-4">Address Search</h3>
-                <div className="flex items-center mb-4 border ">
-                    <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 whitespace-nowrap flex-shrink-0">
-                        Postcode <span className="text-red-600">*</span>
-                    </label>
-                    <div className="flex-1 flex flex-col items-end ml-4 space-y-2">
-                        <input
-                            id="postcode"
-                            name="postcode"
-                            type="text"
-                            value={postcode}
-                            onChange={handlePostcodeChange}
-                            className="p-3 mb-4 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm w-full max-w-xs"
-                        />
-                        {error && <p className="text-red-500">{error}</p>}
-                        <div className="flex space-x-4 mt-2">
-                            <button
-                                onClick={handleSearch}
-                                className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                            >
-                                Search
-                            </button>
-                            <button
-                                onClick={handleClear}
-                                className="px-4 py-2 bg-teal-500 text-white rounded-md shadow-sm hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
-                            >
-                                Clear
-                            </button>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-end space-y-2 mb-4 text-left align-left bg-formColor">
-                    <a
-                        href="#"
-                        className="text-blue-600 hover:text-blue-800"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleManualEntryToggle(); // Toggle manual entry
-                        }}
-                    >
-                        I don't know the postcode
-                    </a>
-                    <a
-                        href="#"
-                        className="text-blue-600 hover:text-blue-800 "
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleManualEntryToggle(); // Toggle manual entry
-                        }}
-                    >
-                        Enter address manually / My address is not listed
-                    </a>
-                </div>
-                </div>
+                
+
+    
+    <div className="grid grid-cols-[auto_1fr] gap-4 mb-4 border p-4">
+    <label htmlFor="postcode" className="text-lg font-medium text-gray-700 whitespace-nowrap">
+        Postcode <span className="text-red-600">*</span>
+    </label>
+    
+    <div className="flex flex-col items-end space-y-2">
+        <input
+            id="postcode"
+            name="postcode"
+            type="text"
+            value={postcode}
+            onChange={handlePostcodeChange}
+            className="p-3 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm w-full max-w-xs"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+        <div className="flex space-x-4">
+            <button
+                onClick={handleSearch}
+                className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+                Search
+            </button>
+            <button
+                onClick={handleClear}
+                className="px-4 py-2 bg-teal-500 text-white rounded-md shadow-sm hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+            >
+                Clear
+            </button>
+        </div>
+        <div className="text-left space-y-2 bg-formColor ">
+            <a
+                href="#"
+                className="text-blue-600 hover:text-blue-800"
+                onClick={(e) => {
+                    e.preventDefault();
+                    handleManualEntryToggle(); // Toggle manual entry
+                }}
+            >
+                I don't know the postcode
+            </a>
+        </div>
+        <div className="text-left space-y-2">
+            <a
+                href="#"
+                className="text-blue-600 hover:text-blue-800"
+                onClick={(e) => {
+                    e.preventDefault();
+                    handleManualEntryToggle(); // Toggle manual entry
+                }}
+            >
+                Enter address manually / My address is not listed
+            </a>
+        </div>
+    </div>
+</div>
+
                 
                 {manualEntry && (
                     <div className="mt-6">

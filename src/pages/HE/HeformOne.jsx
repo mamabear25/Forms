@@ -101,7 +101,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
 
             <div className='mt-4'>
 
-            <h2 className='text-lg container mx-auto pl-4' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
+            <h2 className='text-lg container mx-auto' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
 
             </div>
             <div className=" mx-auto mt-4 p-10 bg-formColor" style={{maxWidth: '90vw'}} >
