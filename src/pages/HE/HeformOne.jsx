@@ -98,8 +98,8 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
     return (
         <div className='text-lg mx-auto mt-20'>
             <Offering />
-            <div className='mt-4'>
-                <h2 className='text-lg container mx-auto' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
+            <div className='mt-10'>
+            <h2 className='mx-auto text-lg container' > / <span className='font-bold'>Personal Details </span>/ Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
             </div>
             <div className=" mx-auto mt-4 p-10 bg-formColor" style={{maxWidth: '90vw'}} >
                 <h2 className="text-[2.5rem] font-semibold mb-4">Personal Details</h2>
@@ -116,9 +116,18 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                             onChange={handleChange}
                             className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                         >
-                            <option value="" disabled>Select...</option>
+                            <option value="" disabled></option>
+                            <option value="Mr">Br</option>
+                            <option value="Mr">Dr</option>
+                            <option value="Mr">Mast</option>
+                            <option value="Mr">Miss</option>
                             <option value="Mr">Mr</option>
-                            <option value="Miss">Miss</option>
+                            <option value="Mr">Mrs</option>
+                            <option value="Miss">Ms</option>
+                            <option value="Mr">Prof</option>
+                            <option value="Mr">Revd</option>
+                            <option value="Mr">Sr</option>
+
                         </select>
                     </div>
                     <div className="mt-4">
@@ -194,7 +203,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                             onChange={handleChange}
                             className="w-full p-2 border mb-4 border-gray-500 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
-                            <option value="" disabled selected>--Please Select--</option>
+                            <option value="" disabled selected></option>
                             <option value="Mr">M</option>
                             <option value="Miss">F</option>
                         </select>
@@ -215,8 +224,14 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         className="mt-1 p-3 block w-full border border-gray-300 rounded-md"
                     >
                         <option value="" disabled>--Please Select--</option>
-                        <option value="Rented">Rented</option>
-                        <option value="Owned">Owned</option>
+                        <option value="Rented">1 - Private sector Halls</option>
+                        <option value="Rented">2 - Provider owned/maintained</option>
+                        <option value="Rented">3 - Parental/guardian home</option>
+                        <option value="Rented">4 - Other</option>
+                        <option value="Rented">5 - Not in attendance at the college</option>
+                        <option value="Rented">6 - Own residence</option>
+                        <option value="Rented">7 - Other rented accommodation</option>
+                        <option value="Rented">8 - Not known</option>
                     </select>
                 </div>
                 <div className="mb-6 ">

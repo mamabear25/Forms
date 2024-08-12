@@ -1,22 +1,36 @@
 import React from 'react';
 
 const qualifications = [
-    { ukLevel: 'Entry Level ', qualification: 'GCSEs (Grade D-G)', equivalent: 'High School Diploma (some US states)' },
-    { ukLevel: 'Level 1', qualification: 'GCSEs (Grade A*-C)', equivalent: 'High School Diploma (most US states)' },
-    { ukLevel: 'Full Level 2', qualification: 'A Levels', equivalent: 'High School Diploma with Advanced Placement (AP) or International Baccalaureate (IB)' },
-    { ukLevel: 'Full Level 3', qualification: 'Higher National Certificate (HNC)', equivalent: 'Associate Degree' },
-    { ukLevel: 'Level 4', qualification: 'Higher National Diploma (HND)', equivalent: 'Associate Degree (with more credits)' },
-    { ukLevel: 'Level 5', qualification: 'Bachelor\'s Degree', equivalent: 'Bachelor\'s Degree' },
-    { ukLevel: 'Level 6', qualification: 'Master\'s Degree', equivalent: 'Master\'s Degree' },
-    { ukLevel: 'Level 7', qualification: 'Doctorate (PhD)', equivalent: 'Doctorate (PhD)' },
-    { ukLevel: 'Level 8', qualification: 'Doctorate (PhD)', equivalent: 'Doctorate (PhD)' },
+    { ukLevel: 'Entry Level ', 
+        equivalent: 'first certificate GCSE - grades 3, 2, 1 or grades D, E, F, G level 1 award level 1 certificate level 1 diploma level 1 ESOL level 1 essential skills level 1 functional skills level 1 national vocational qualification (NVQ) music grades 1, 2 and 3' 
+    },
+    { ukLevel: 'Level 1', 
+        equivalent: 'For example, GCSE grades 1-3/F-D, First certificate, Level 1 Award/Certificate/Diploma, Functional Skill Level 1'
+    },
+    { ukLevel: 'Full Level 2', 
+        equivalent: 'GCSE/O Level (5 or more GCSEs grades A*-C), GCSE (9-1) (5 or more GCSEs grade 4 or above), 2 or 3 AS Levels (for AS qualifications regulated before 1 September 2015), CSE Grade 1 (5 or more), 1 A Level, Higher 14-19 Diploma, QCF Diploma level 2, QCF Certificate level 2 at 13 or 14 credits undertaken before 2014 to 2015, Level 2 Principal Learning, NVQ level 2, GNVQ Intermediate,' 
+    },
+    { ukLevel: 'Full Level 3', 
+        equivalent: 'A Levels (2 or more advanced level passes), 4 or more AS Levels (for AS qualifications regulated before 1 September 2015), QCF Diploma Level 3, QAA Access to HE, Advanced 14-19 Diploma, GNVQ Advanced, NVQ level 3, AVCE double award, Tech Levels which are in the 16-19 Performance Tables, Applied Generals which are in the 16-19 Performance Tables (from 1 August 2015), QCF Certificate at Level 3 which is 30 to 36 credits' 
+    },
+    { ukLevel: 'Level 4', 
+        equivalent: 'For example, Certificate of Higher Education, Higher Apprenticeship, HNC' },
+    { ukLevel: 'Level 5', 
+        equivalent: 'For example, Diploma of Higher Education, Foundation Degree, HND' },
+    { ukLevel: 'Level 6', 
+        equivalent: 'For example, Degree Apprenticeship, Honours Degree' },
+    { ukLevel: 'Level 7', 
+        equivalent: 'For example, Masters level degree, PgDip' },
+    { ukLevel: 'Level 8', 
+        equivalent: 'For example, Doctorate/PhD' },
 
 ];
+
 
 const QualsonEntry
  = () => {
     return (
-        <div className="p-6 mx-auto bg-white shadow-md rounded-lg" style={{maxWidth: '90vw'}}>
+        <div className="p-6 mx-auto bg-white " style={{maxWidth: '90vw'}}>
     <div className="overflow-x-auto">
         <table className="w-full table-fixed divide-y divide-gray-200">
             <thead className="bg-gray-50">
