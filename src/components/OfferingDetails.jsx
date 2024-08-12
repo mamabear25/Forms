@@ -2,8 +2,8 @@ import React from "react";
 
 const Offering = () => {
     return (
-        <div className="flex justify-left p-4 mb-10">
-    <div className="overflow-x-auto w-full mx-auto" style={{maxWidth: '1329px'}}>
+        <div className="flex justify-left p-4 mb-10 text-lg">
+    <div className="overflow-x-auto w-full mx-auto" style={{maxWidth: '90vw'}}>
         <table className="min-w-full table-auto border-collapse border border-gray-200">
             <thead className="bg-white p-4">
                 <tr className="p-4">
