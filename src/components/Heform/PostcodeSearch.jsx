@@ -99,13 +99,13 @@ const AddressSearch = ({ formData, setFormData, showErrors }) => {
     };
 
     return (
-        <div className="p-6 max-w-7xl mx-auto">
+        <div className="p-6 max-w-8xl mx-auto">
             <div className="mb-6">
                 <h3 className="text-xl font-semibold">
                     Address details (<span>Where you will live while on this course</span>)
                 </h3>
             </div>
-            <div className="bg-white shadow-md rounded-lg p-6">
+            <div className="bg-whiterounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4">Address Search</h3>
                 <div className="flex items-center mb-4">
                     <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 whitespace-nowrap flex-shrink-0">

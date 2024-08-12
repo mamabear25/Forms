@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AddressSearch from '../../components/Heform/PostcodeSearch';
 import TermTimeAddress from '../../components/Heform/TermTime';
+import Offering from '../../components/OfferingDetails';
 
 const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
     const [errors, setErrors] = useState([]);
@@ -96,7 +97,12 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
 
     return (
         <div>
-            <div className="container mx-auto mt-8 p-4 bg-white rounded">
+            <Offering />
+            <div className='mt-4 p-4'>
+            <h2 className='text-lg container' > / <span className='font-bold'>Personal Details</span> / Further Details / Next of Kin / Emergency Contact /Employment / Declaration</h2>
+
+            </div>
+            <div className="container mx-auto mt-4 p-4 bg-white rounded">
                 <h1 className="text-xl font-bold mb-4">Personal Details</h1>
                 <p>Please note all fields with <span className="text-red-600">*</span> are required</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -147,7 +153,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                     </div>
                 </div>
                 <div className="mt-4">
-                    <p>If you have known with a different surname please provide this in the box below</p>
+                    <p>If you have known with a different surname please provide this in the box below <span className="text-red-600">*</span></p>
                     <label htmlFor="previousSurname" className="block text-sm font-medium text-gray-700">
                         Previous Surname
                     </label>
@@ -164,7 +170,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                 <div className="flex flex-wrap mt-4 gap-4">
                     <div className="flex-1 min-w-[200px]">
                         <div className="form-section mb-6">
-                            <label htmlFor="dob" className="block text-gray-800 font-bold mb-2">
+                            <label htmlFor="dob" className="block text-gray-800 mb-2">
                                 What is your Date of Birth? <span className="text-red-600">*</span>
                             </label>
                             <input
@@ -218,7 +224,7 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                 <TermTimeAddress formData={formData} setFormData={setFormData} showErrors={showErrors} />
                 <div>
             <h2 className="text-lg font-bold mt-8">
-                You must provide at least one contact detail below:
+                You must provide at least one phone detail below:
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="mt-4">

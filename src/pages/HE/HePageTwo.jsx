@@ -1,5 +1,6 @@
 import React, { useState , useEffect} from 'react';
 import QualsonEntry from '../../components/Heform/Quals';
+import Offering from '../../components/OfferingDetails';
 
 const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
     const [isEnrolled, setIsEnrolled] = useState(formData.enrolledOther || ''); 
@@ -95,9 +96,13 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
     return (
         <div>
             <div className="container mx-auto mt-8 p-4 bg-white rounded">
+                <Offering />
+                <div className='mt-4 p-4 mb-6'>
+                <h2 className='text-lg container' > / Personal Details / <span className='font-bold'>Further Details</span> / Next of Kin / Emergency Contact /Employment / Declaration</h2>
+
+                </div>
                 <form id="preEnrolmentForm">
                     <h1 className="text-xl font-bold mb-4">Further Details</h1>
-                    <p>Please not all fields with <span className="text-red-600">*</span> are required</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="mt-4">
                             <label for="nationality" className="block text-sm font-medium text-gray-700">What is your Nationality? <span className="text-red-600">*</span></label>
@@ -132,6 +137,8 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="no">Miss</option>
                             </select>
                         </div>
+                    </div>
+                    <div className='max-w-sm'>
                         <div className="mt-4">
                             <label for="residency" className="block text-sm font-medium text-gray-700">My residency status is <span className="text-red-600">*</span></label>
                             <select id="residency" 
@@ -143,6 +150,8 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="no">Miss</option>
                             </select>
                         </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="mt-4">
                             <label for="language" className="block text-sm font-medium text-gray-700">What is your first language? <span className="text-red-600">*</span></label>
                             <select id="language" 
@@ -164,16 +173,20 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="yes">Mr</option>
                                 <option value="no">Miss</option>
                             </select>
-                        </div> 
-                    </div>
-                    <div className="mt-4">
-                        <p>If you have known with a different surname please provide this in the box below</p>
-                        <label for="nationalinsurance" className="block text-sm font-medium text-gray-700">National Insurance Number - Please enter this without spaces</label>
+                        </div>
+                        <div className="mt-4">
+                        <label for="nationalinsurance" className="block text-sm font-medium text-gray-700">National Insurance Number - Please enter without spaces</label>
                         <input type="text" 
                         value={formData.mobileNumber}
                         onChange={handleChange}
                         id="nationalinsurance" name="nationalinsurance" required className="mt-1 p-2 block w-full border border-gray-300 rounded-md" />
+                    </div> 
                     </div>
+                    <p className='text-sm mt-4'>
+                        We are asking some of these questions to ensure you are able to access appropriate support to help you achieve your potential
+                        whilst studying with us. Some of these questions are asked as the Government requires us to collect certain information to support the 
+                        advancement of equality and diversity.
+                    </p>
                     {/* <FurtherDets /> */}
                     <div className=" max-w-7xl mx-auto bg-white rounded-lg">
             <div className="mt-4">
@@ -295,8 +308,8 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
 
 
                     <div className="mt-4">
-                        <h2>Education</h2>
-                        <label for="education" className="block text-sm font-medium text-gray-700">What is your highest level of Qualification <span className="text-red-600">*</span></label>
+                        <h1 className='text-4xl mb-4'>Education</h1>
+                        <label for="education" className="block text-sm font-medium text-gray-700">What is your highest level of Qualification? <span className="text-red-600">*</span></label>
                         <select id="education" 
                         value={formData.education}
                         onChange={handleChange}
@@ -306,7 +319,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                             <option value="no">Owned</option>
                         </select>
                     </div>
-                    <div>
+                    <div className='mt-6'>
                         <p>Use the following table to help you pick the correct qualification level...</p>
                     </div>
                     <QualsonEntry />

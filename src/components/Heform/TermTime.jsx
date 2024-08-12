@@ -8,8 +8,8 @@ const TermTimeAddress = () => {
     };
 
     return (
-        <div className="p-6 max-w-5xl mx-auto bg-white shadow-md rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">Term-Time Address <span className="text-red-600">*</span></h3>
+        <div className="p-6 max-w-7xl mx-auto bg-white rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">Is your term time address different to your home address? <span className="text-red-600">*</span></h3>
 
             <div className="space-y-4">
                 <div className="flex items-center">

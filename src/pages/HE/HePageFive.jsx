@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Declaration from '../../components/Heform/Declaration';
 import Confirm from '../../components/Heform/Confirm';
 import EnrolmentNotice from '../../components/Heform/EnrolButton';
+import Offering from '../../components/OfferingDetails';
 
 const HFive = () => {
     const [files, setFiles] = useState([]);
@@ -39,6 +40,11 @@ const HFive = () => {
     return (
         <div>
             <div className="container mx-auto mt-8 p-4 bg-white rounded">
+                <Offering />
+                <div className='mt-4 p-4 mb-6'>
+                <h2 className='text-lg container' > / Personal Details / Further Details / Next of Kin / Emergency Contact / Employment / <span className='font-bold'>Declaration</span></h2>
+                </div>
+
                 <h2>Fee Information</h2>
                 <p>Please note, the fee for this course is $4000</p>
                 <form id="preEnrolmentForm">
@@ -52,7 +58,7 @@ const HFive = () => {
                             <option value="personal">Personal Payment</option>
                         </select>
                     </div>
-                    <p className="mt-2">The evidence upload feature has been provided so that you can upload proof of a student loan or Advanced Learner Loan.</p>
+                    {/* <p className="mt-2">The evidence upload feature has been provided so that you can upload proof of a student loan or Advanced Learner Loan.</p>
                     <div className="mt-4">
                         <label htmlFor="fileUpload" className="block text-sm font-medium text-gray-700">Upload file</label>
                         <input
@@ -72,7 +78,7 @@ const HFive = () => {
                         >
                             Upload
                         </button>
-                    </div>
+                    </div> */}
 
                     {error && (
                         <div className="mt-4 text-red-600">
@@ -81,7 +87,7 @@ const HFive = () => {
                     )}
 
                     {/* Conditionally render the file table only if the table should be shown */}
-                    {showTable && files.length > 0 && (
+                    {/* {showTable && files.length > 0 && (
                         <div className="mt-6">
                             <table className="min-w-full divide-y divide-gray-200 mt-2">
                                 <thead className="bg-gray-50">
@@ -108,7 +114,7 @@ const HFive = () => {
                                 </tbody>
                             </table>
                         </div>
-                    )}
+                    )} */}
 
                     <Declaration />
                     <EnrolmentNotice />

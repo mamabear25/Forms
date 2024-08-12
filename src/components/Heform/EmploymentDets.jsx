@@ -14,7 +14,7 @@ const EmploymentDets = () => {
 
     return (
         <div>
-            <h2 className="text-lg font-bold mt-8">Employment Details</h2>
+            <h2 className="text-lg font-bold mt-8">Employment Status</h2>
             
             <div className="mt-4">
                 <label htmlFor="fullTimeEducation" className="block text-sm font-medium text-gray-700">
@@ -34,7 +34,7 @@ const EmploymentDets = () => {
 
             <div className="mt-4 max-w-md">
                 <label htmlFor="employmentStatus" className="block text-sm font-medium text-gray-700">
-                    Please tell us your employment status <span className="text-red-600">*</span><span className="text-red-600">*</span>
+                    Please tell us your employment status <span className="text-red-600">*</span>
                 </label>
                 <select
                     id="employmentStatus"
