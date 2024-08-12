@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
         <header className="bg-background text-white py-8 text-poppins">
-    <div className="container mx-auto flex items-center">
+            <div className="container mx-auto flex items-center">
         <div className="flex-shrink-0 h-full">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Banner = () => {
             </svg>
         </div>
         {/* Center the navigation links */}
-        <h1 className="text-5xl font-bold text-gray-200 ml-4 p-2">
+        <h1 className="text-5xl font-semi-bold ml-4 p-2">
             Higher Education Enrolment Form
         </h1>
     </div>
