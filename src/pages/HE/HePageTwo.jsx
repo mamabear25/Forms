@@ -2,6 +2,7 @@ import React, { useState , useEffect} from 'react';
 import QualsonEntry from '../../components/Heform/Quals';
 import Offering from '../../components/OfferingDetails';
 import countries from '../../components/Heform/countries.json'
+import languages from '../../components/Heform/languages.json'
 
 const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
     const [isEnrolled, setIsEnrolled] = useState(formData.enrolledOther || ''); 
@@ -114,7 +115,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="" disabled selected></option>
                                 {countries.map((country) => (
                                 <option key={country.code} value={country.code}>
-                                    {country.name} ({country.code})
+                                    {country.name}
                                 </option>
                                 ))}
                             </select>
@@ -132,7 +133,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="" disabled selected></option>
                                 {countries.map((country) => (
                                 <option key={country.code} value={country.code}>
-                                    {country.name} ({country.code})
+                                    {country.name}
                                 </option>
                                 ))}
                             </select>
@@ -194,9 +195,12 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 value={formData.language}
                                 onChange={handleChange}
                                 name="language" required className="mt-1 p-2 block w-full border border-gray-300 rounded-md">
-                                <option value disabled selected>Select...</option>
-                                <option value="yes">Mr</option>
-                                <option value="no">Miss</option>
+                                <option value disabled selected></option>
+                                {languages.map((language) => (
+                                <option key={language.code} value={language.code}>
+                                    {language.name}
+                                </option>
+                                ))}
                             </select>
                         </div>
                         <div className="mt-4">
@@ -206,8 +210,10 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 onChange={handleChange}
                                 name="refugee" required className="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                                 <option value disabled selected>Select...</option>
-                                <option value="yes">Mr</option>
-                                <option value="no">Miss</option>
+                                <option value="yes">Neither apply</option>
+                                <option value="no">Asylum Seeker</option>
+                                <option value="no">Refugee</option>
+
                             </select>
                         </div>
                         <div className="mt-4">
@@ -384,7 +390,6 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                             <option value="yes">Level 5: Foundation course at HE level</option>
                             <option value="yes">Level 5: Other Qualification at Level 5</option>
                             <option value="yes">Level 5: UK ordinary (non-honors) first degree</option>
-                            <option value="no">Miss</option>
                         </select>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

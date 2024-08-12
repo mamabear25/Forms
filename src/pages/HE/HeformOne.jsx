@@ -223,10 +223,10 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                         onChange={handleChange}
                         className="mt-1 p-3 block w-full border border-gray-300 rounded-md"
                     >
-                        <option value="" disabled>--Please Select--</option>
+                        <option value="" disabled selected>--Please Select--</option>
                         <option value="Rented">1 - Private sector Halls</option>
-                        <option value="Rented">2 - Provider owned/maintained</option>
-                        <option value="Rented">3 - Parental/guardian home</option>
+                        <option value="ren">2 - Provider owned/maintained</option>
+                        <option value="tuts">3 - Parental/guardian home</option>
                         <option value="Rented">4 - Other</option>
                         <option value="Rented">5 - Not in attendance at the college</option>
                         <option value="Rented">6 - Own residence</option>

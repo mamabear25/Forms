@@ -23,7 +23,6 @@ const qualifications = [
         equivalent: 'For example, Masters level degree, PgDip' },
     { ukLevel: 'Level 8', 
         equivalent: 'For example, Doctorate/PhD' },
-
 ];
 
 
