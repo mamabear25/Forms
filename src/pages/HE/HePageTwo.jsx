@@ -278,38 +278,39 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                     </div>
                                 )}
                                 {showTable && files.length > 0 && (
-                        <div className="mt-6">
-                            <table className="min-w-full divide-y divide-gray-200 mt-2">
-                                <thead className="bg-gray-50">
-                                    <tr className='text-center'>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Attachment</th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remove</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="bg-white divide-y divide-gray-200">
-                                    {files.map(file => (
-                                        <tr key={file.name}>
-                                            <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{file.name}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-500">
-                                                <button
-                                                    type="button"
-                                                    onClick={() => handleRemoveFile(file.name)}
-                                                    className="bg-red-700 p-2 text-black hover:bg-black hover:text-white rounded-sm"
-                                                >
-                                                    X
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    )}
+                                    <div className="mt-6">
+                                        <table className="min-w-full divide-y divide-gray-200 mt-2">
+                                            <thead className="bg-gray-50">
+                                                <tr className='text-center'>
+                                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Attachment</th>
+                                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remove</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="bg-white divide-y divide-gray-200">
+                                                {files.map(file => (
+                                                    <tr key={file.name}>
+                                                        <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{file.name}</td>
+                                                        <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-500">
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => handleRemoveFile(file.name)}
+                                                                className="bg-red-700 p-2 text-black hover:bg-black hover:text-white rounded-sm"
+                                                            >
+                                                                X
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                )}
                             </div>
-                            
+                            <div className='border border-b border-gray-300'></div>
+
+                                        
                         </div>
                     )}
-                    <div className='border border-b border-gray-300'></div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                         <div className="mt-4">
                             <label for="language" className="block font-medium text-gray-700">What is your first language? <span className="text-red-600">*</span></label>
