@@ -116,17 +116,17 @@ const HForm1 = ({ formData, setFormData, validateStep, showErrors, }) => {
                             onChange={handleChange}
                             className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
                         >
-                            <option value="" disabled></option>
-                            <option value="Mr">Br</option>
-                            <option value="Mr">Dr</option>
-                            <option value="Mr">Mast</option>
-                            <option value="Mr">Miss</option>
-                            <option value="Mr">Mr</option>
-                            <option value="Mr">Mrs</option>
+                            <option value="" disabled selected></option>
+                            <option value="br">Br</option>
+                            <option value="mr">Dr</option>
+                            <option value="ma">Mast</option>
+                            <option value="mi">Miss</option>
+                            <option value="mr">Mr</option>
+                            <option value="mrs">Mrs</option>
                             <option value="Miss">Ms</option>
-                            <option value="Mr">Prof</option>
-                            <option value="Mr">Revd</option>
-                            <option value="Mr">Sr</option>
+                            <option value="pr">Prof</option>
+                            <option value="re">Revd</option>
+                            <option value="sr">Sr</option>
 
                         </select>
                     </div>
