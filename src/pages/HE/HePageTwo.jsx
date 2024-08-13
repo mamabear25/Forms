@@ -272,6 +272,8 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                         Upload
                                     </button>
                                 </div>
+                                <div className='border border-b border-gray-300 mt-14'></div>
+
                                 {error && (
                                     <div className="mt-4 text-red-600">
                                         {error}
@@ -282,8 +284,8 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                         <table className="min-w-full divide-y divide-gray-200 mt-2">
                                             <thead className="bg-gray-50">
                                                 <tr className='text-center'>
-                                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Attachment</th>
-                                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remove</th>
+                                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider font-bold">Attachment</th>
+                                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider font-bold">Remove</th>
                                                 </tr>
                                             </thead>
                                             <tbody className="bg-white divide-y divide-gray-200">
@@ -304,9 +306,9 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                             </tbody>
                                         </table>
                                     </div>
+                                    
                                 )}
                             </div>
-                            <div className='border border-b border-gray-300'></div>
 
                                         
                         </div>
