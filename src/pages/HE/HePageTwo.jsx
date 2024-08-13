@@ -249,7 +249,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                             </div>
                             <div className='text-lg mt-4'>
                                 <p>Examples of Evidence can be</p>
-                                <ul className='text-lg mt-4 list'>
+                                <ul className='text-lg mt-4 list-disc ml-4'>
                                     <li> Clear photographs of the front and back of your residence, visa or ARC card</li>
                                     <li> A letter from the Home Office</li>
                                 </ul>
@@ -267,7 +267,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                     <button
                                         type="button"
                                         onClick={handleUpload}
-                                        className="px-4 py-2 bg-green-500 text-white rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                        className="px-4 py-2 bg-green-700 text-white rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                                     >
                                         Upload
                                     </button>
