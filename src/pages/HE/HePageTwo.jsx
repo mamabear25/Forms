@@ -13,6 +13,7 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
     const [fileInput, setFileInput] = useState(null);
     const [showTable, setShowTable] = useState(false);
     const [error, setError] = useState('');
+    const [selectedFiles, setSelectedFiles] = useState([]); // Temporarily store selected files
 
     const handleEnrollmentChange = (e) => {
         const value = e.target.value;
@@ -85,30 +86,41 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
     };
 
     const handleFileChange = (event) => {
-        setFileInput(event.target.files);
         const newFiles = Array.from(event.target.files);
-
+    
         // Allowed file types
-        const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/avif', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-
+        const allowedTypes = [
+          "image/png",
+          "image/jpeg",
+          "image/jpg",
+          "image/avif",
+          "application/pdf",
+          "application/msword",
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        ];
+    
         // Filter files based on allowed types
-        const validFiles = newFiles.filter(file => allowedTypes.includes(file.type));
-
+        const validFiles = newFiles.filter((file) =>
+          allowedTypes.includes(file.type)
+        );
+    
         // Update state with valid files
-        setFiles(validFiles);
+        setSelectedFiles(validFiles);
     };
 
     const handleUpload = () => {
-        if (fileInput && fileInput.length > 0) {
-            setShowTable(true);
-            setError('');
+        if (selectedFiles.length > 0) {
+          setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+          setShowTable(true);
+          setError("");
+          setSelectedFiles([]); // Clear the temporary storage after uploading
         } else {
-            setError('Please select a file to upload.');
+          setError("Please select a file to upload.");
         }
     };
 
     const handleRemoveFile = (fileName) => {
-        setFiles(prevFiles => prevFiles.filter(file => file.name !== fileName));
+        setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
     };
 
     const handleChange = (e) => {
@@ -273,12 +285,11 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                     </button>
                                 </div>
                                 <div className='border border-b border-gray-300 mt-14'></div>
-
-                                {error && (
-                                    <div className="mt-4 text-red-600">
-                                        {error}
-                                    </div>
-                                )}
+                                    {error && (
+                                        <div className="mt-4 text-red-600">
+                                            {error}
+                                        </div>
+                                    )}
                                 {showTable && files.length > 0 && (
                                     <div className="mt-6">
                                         <table className="min-w-full divide-y divide-gray-200 mt-2">
