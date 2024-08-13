@@ -1,0 +1,419 @@
+
+import React, { useState, useEffect } from 'react';
+import QualsonEntry from '../../components/Heform/Quals';
+import Offering from '../../components/OfferingDetails';
+import countries from '../../components/Heform/countries.json';
+import languages from '../../components/Heform/languages.json';
+
+const HTwo = ({ formData, setFormData, validateStep, showErrors }) => {
+  const [isEnrolled, setIsEnrolled] = useState(formData.enrolledOther || '');
+  const [errors, setErrors] = useState([]);
+  const [hasDisability, setHasDisability] = useState(formData.disability || '');
+  const [residencyStatus, setResidencyStatus] = useState(formData.residency || ''); // State to track residency status
+
+  const handleEnrollmentChange = (e) => {
+    const value = e.target.value;
+    setIsEnrolled(value);
+    setFormData((prevData) => ({ ...prevData, enrolledOther: value }));
+  };
+
+  useEffect(() => {
+    setHasDisability(formData.disability || '');
+  }, [formData.disability]);
+
+  const validate = () => {
+    let valid = true;
+    const stepErrors = [];
+
+    // Validation for other fields
+    if (!formData.nationality) {
+      stepErrors.push('What is your Nationality?');
+      valid = false;
+    }
+    if (!formData.country) {
+      stepErrors.push('What is your country of residence?');
+      valid = false;
+    }
+    if (!formData.ethnic) {
+      stepErrors.push('What is your ethnic group?');
+      valid = false;
+    }
+    if (!formData.residency) {
+      stepErrors.push('Your residency status is required.');
+      valid = false;
+    }
+    if (!formData.language) {
+      stepErrors.push('What is your first Language?');
+      valid = false;
+    }
+    if (!formData.disability) {
+      stepErrors.push('Do you have any disabilities or learning difficulties?');
+      valid = false;
+    }
+    if (!formData.authority) {
+      stepErrors.push('Have you previously been looked after by the Local Authority?');
+      valid = false;
+    }
+    if (!formData.careForSomeone) {
+      stepErrors.push('Do you care for someone due to illness, disability, a mental health problem or an addiction? ');
+      valid = false;
+    }
+    if (!formData.currentlyInCare) {
+      stepErrors.push('Are you currently in Care?');
+      valid = false;
+    }
+    if (!formData.education) {
+      stepErrors.push('What is your highest level of Qualification');
+      valid = false;
+    }
+    if (!formData.edtype) {
+      stepErrors.push('What type of qualification was this? ');
+      valid = false;
+    }
+    // Validate enrolledOther details
+    if (isEnrolled === 'yes' && !formData.details) {
+      stepErrors.push('Please provide details if you are currently enrolled in another college/provider.');
+      valid = false;
+    }
+
+    setErrors(stepErrors);
+    return valid;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+
+    // Handle residency-specific logic
+    if (name === 'residency') {
+      setResidencyStatus(value);
+    }
+  };
+
+  useEffect(() => {
+    if (showErrors) {
+      validate();
+    }
+  }, [showErrors, formData, isEnrolled]);
+
+  return (
+    <div className="text-lg ">
+      <div className="container mx-auto mt-20 p-4 rounded">
+        <Offering />
+        <div className="mt-10 p-4 mb-6">
+          <h2 className="text-lg container">
+            / Personal Details / <span className="font-bold">Further Details</span> / Next of Kin / Emergency
+            Contact /Employment / Declaration
+          </h2>
+        </div>
+        <form id="preEnrolmentForm" className="bg-formColor p-10" style={{ maxWidth: '90vw' }}>
+          <h1 className="mb-4 text-[2.5rem] font-semibold">Further Details</h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="mt-4">
+              <label htmlFor="nationality" className="block font-medium text-gray-700">
+                What is your Nationality? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="nationality"
+                value={formData.nationality}
+                onChange={handleChange}
+                name="nationality"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                {countries.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mt-4">
+              <label htmlFor="country" className="block font-medium text-gray-700">
+                What is your country of residence? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="country"
+                value={formData.country}
+                onChange={handleChange}
+                name="country"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                {countries.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mt-4">
+              <label htmlFor="ethnic" className="block font-medium text-gray-700">
+                What is your ethnic group? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="ethnic"
+                value={formData.ethnic}
+                onChange={handleChange}
+                name="ethnic"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value disabled selected></option>
+                <option value="31">English / Welsh / Scottish / Northern Irish / British</option>
+                <option value="44">African</option>
+                <option value="43">Any other Asian background</option>
+                <option value="46">Any other Black / African / Caribbean background</option>
+                <option value="98">Any other ethnic group</option>
+                <option value="38">Any Other Mixed / multiple ethnic background</option>
+                <option value="34">Any Other White background</option>
+                <option value="47">Arab</option>
+                <option value="41">Bangladeshi</option>
+                <option value="45">Caribbean</option>
+                <option value="42">Chinese</option>
+                <option value="33">Gypsy or Irish Traveller</option>
+                <option value="39">Indian</option>
+                <option value="32">Irish</option>
+                <option value="99">Not provided</option>
+                <option value="40">Pakistani</option>
+                <option value="37">White and Asian</option>
+                <option value="36">White and Black African</option>
+                <option value="35">White and Black Caribbean</option>
+              </select>
+            </div>
+          </div>
+          <div className="max-w-sm">
+            <div className="mt-4">
+              <label htmlFor="residency" className="block font-medium text-gray-700">
+                My residency status is <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="residency"
+                value={formData.residency}
+                onChange={handleChange}
+                name="residency"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value disabled selected></option>
+                <option selected="selected" value="">
+                  --Please Select--
+                </option>
+                <option value="01">1. UK resident for 3 years or more</option>
+                <option value="02">2. Settled Status (EU Settlement Scheme)</option>
+                <option value="03">3. Pre-Settled Status (EU Settlement Scheme)</option>
+                <option value="04">4. Persons granted leave under the Ukraine scheme</option>
+                <option value="05">5. Other Visa Holder</option>
+                <option value="06">6. Republic of Ireland resident for 3 years or more</option>
+              </select>
+            </div>
+            {/* Conditionally render input based on residency status */}
+            {['02', '03'].includes(residencyStatus) && (
+              <div className="mt-4">
+                <label htmlFor="shareCode" className="block font-medium text-gray-700">
+                  Enter your share code:
+                </label>
+                <input
+                  type="text"
+                  id="shareCode"
+                  name="shareCode"
+                  value={formData.shareCode || ''}
+                  onChange={handleChange}
+                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                />
+              </div>
+            )}
+            {['04', '05'].includes(residencyStatus) && (
+              <div className="mt-4">
+                <label htmlFor="visaDocument" className="block font-medium text-gray-700">
+                  Upload Visa Document:
+                </label>
+                <input
+                  type="file"
+                  id="visaDocument"
+                  name="visaDocument"
+                  onChange={(e) =>
+                    setFormData((prevData) => ({ ...prevData, visaDocument: e.target.files[0] }))
+                  }
+                  className="mt-1 block w-full"
+                />
+                <label htmlFor="promptText" className="block font-medium text-gray-700 mt-4">
+                  Additional Information (optional):
+                </label>
+                <textarea
+                  id="promptText"
+                  name="promptText"
+                  value={formData.promptText || ''}
+                  onChange={handleChange}
+                  className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                  rows="3"
+                ></textarea>
+              </div>
+            )}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="mt-4">
+              <label htmlFor="language" className="block font-medium text-gray-700">
+                What is your first Language? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="language"
+                value={formData.language}
+                onChange={handleChange}
+                name="language"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                {languages.map((language) => (
+                  <option key={language} value={language}>
+                    {language}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mt-4">
+              <label htmlFor="disability" className="block font-medium text-gray-700">
+                Do you have any disabilities or learning difficulties? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="disability"
+                value={formData.disability}
+                onChange={handleChange}
+                name="disability"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="noinfo">Do not wish to provide this information</option>
+              </select>
+            </div>
+            <div className="mt-4">
+              <label htmlFor="authority" className="block font-medium text-gray-700">
+                Have you previously been looked after by the Local Authority? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="authority"
+                value={formData.authority}
+                onChange={handleChange}
+                name="authority"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="noinfo">Do not wish to provide this information</option>
+              </select>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="mt-4">
+              <label htmlFor="careForSomeone" className="block font-medium text-gray-700">
+                Do you care for someone due to illness, disability, a mental health problem or an addiction?{' '}
+                <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="careForSomeone"
+                value={formData.careForSomeone}
+                onChange={handleChange}
+                name="careForSomeone"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="noinfo">Do not wish to provide this information</option>
+              </select>
+            </div>
+            <div className="mt-4">
+              <label htmlFor="currentlyInCare" className="block font-medium text-gray-700">
+                Are you currently in Care? <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="currentlyInCare"
+                value={formData.currentlyInCare}
+                onChange={handleChange}
+                name="currentlyInCare"
+                required
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              >
+                <option value="" disabled selected></option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="noinfo">Do not wish to provide this information</option>
+              </select>
+            </div>
+          </div>
+          <div className="mt-4">
+            <label htmlFor="enrolledOther" className="block font-medium text-gray-700">
+              Are you currently enrolled at another college or provider? <span className="text-red-600">*</span>
+            </label>
+            <select
+              id="enrolledOther"
+              value={formData.enrolledOther}
+              onChange={handleEnrollmentChange}
+              name="enrolledOther"
+              required
+              className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+            >
+              <option value="" disabled selected></option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          {isEnrolled === 'yes' && (
+            <div className="mt-4">
+              <label htmlFor="details" className="block font-medium text-gray-700">
+                If yes, please provide details:
+              </label>
+              <input
+                type="text"
+                id="details"
+                name="details"
+                value={formData.details || ''}
+                onChange={handleChange}
+                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+              />
+            </div>
+          )}
+          <QualsonEntry formData={formData} setFormData={setFormData} />
+          {showErrors && errors.length > 0 && (
+            <div className="mt-4 text-red-600">
+              {errors.map((error, index) => (
+                <div key={index}>{error}</div>
+              ))}
+            </div>
+          )}
+          <div className="mt-6 flex justify-between">
+            <button
+              type="button"
+              className="px-4 py-2 bg-gray-600 text-white rounded"
+              onClick={() => validateStep(false)}
+            >
+              Previous
+            </button>
+            <button
+              type="button"
+              className="px-4 py-2 bg-blue-600 text-white rounded"
+              onClick={() => {
+                if (validate()) {
+                  validateStep(true);
+                }
+              }}
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default HTwo;

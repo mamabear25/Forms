@@ -8,12 +8,12 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
     const [isEnrolled, setIsEnrolled] = useState(formData.enrolledOther || ''); 
     const [errors, setErrors] = useState([]);
     const [hasDisability, setHasDisability] = useState(formData.disability || '');
+    const [residencyStatus, setResidencyStatus] = useState(formData.residency || ''); // State to track residency status
+    const [files, setFiles] = useState([]);
+    const [fileInput, setFileInput] = useState(null);
+    const [showTable, setShowTable] = useState(false);
+    const [error, setError] = useState('');
 
-    // const handleDisabilityChange = (e) => {
-    //     const value = e.target.value;
-    //     setHasDisability(value);
-    //     setFormData(prevData => ({ ...prevData, disability: value }));
-    // };
     const handleEnrollmentChange = (e) => {
         const value = e.target.value;
         setIsEnrolled(value);
@@ -84,9 +84,41 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
         return valid;
     };
 
+    const handleFileChange = (event) => {
+        setFileInput(event.target.files);
+        const newFiles = Array.from(event.target.files);
+
+        // Allowed file types
+        const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/avif', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+        // Filter files based on allowed types
+        const validFiles = newFiles.filter(file => allowedTypes.includes(file.type));
+
+        // Update state with valid files
+        setFiles(validFiles);
+    };
+
+    const handleUpload = () => {
+        if (fileInput && fileInput.length > 0) {
+            setShowTable(true);
+            setError('');
+        } else {
+            setError('Please select a file to upload.');
+        }
+    };
+
+    const handleRemoveFile = (fileName) => {
+        setFiles(prevFiles => prevFiles.filter(file => file.name !== fileName));
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
+    
+        // Handle residency-specific logic
+        if (name === 'residency') {
+            setResidencyStatus(value);
+        }
     };
 
     useEffect(() => {
@@ -167,8 +199,8 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                             </select>
                         </div>
                     </div>
-                    <div className='max-w-sm'>
-                        <div className="mt-4">
+                    <div className='w-2/3 grid grid-cols-1 md:grid-cols-2 space-x-4'>
+                        <div className="mt-4 max-w-sm">
                             <label for="residency" className="block font-medium text-gray-700">My residency status is <span className="text-red-600">*</span></label>
                             <select id="residency" 
                                 value={formData.residency}
@@ -187,8 +219,98 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
                                 <option value="09">9. None of the above - The College will contact you to discuss this further</option>
                             </select>
                         </div>
+                        <div className="mt-3">
+                            {/* Conditionally render input based on residency status */}
+                            {['02', '03'].includes(residencyStatus) && (
+                            <div className="">
+                                <label htmlFor="shareCode" className="block font-medium text-gray-700">
+                                My immigration share code is <span className="text-red-600">*</span>
+                                </label>
+                                <input
+                                type="text"
+                                id="shareCode"
+                                name="shareCode"
+                                value={formData.shareCode || ''}
+                                onChange={handleChange}
+                                className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
+                                />
+                            </div>
+                            )}
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {['04', '05'].includes(residencyStatus) && (
+                        <div className="mt-4 text-lg ">
+                            <label htmlFor="visaDocument" className="block font-semibold text-gray-700 mb-2">
+                                Please upload evidence of your immigration status.
+                            </label>
+                            <div>
+                                <p>If you fail to upload evidence of your immigration status this will delay your enrolment as the College will need to contact you to provide eligibility evidence.</p>
+                                <p>Note: Any uploaded documents will be securely disposed of after being reviewed by the College</p>
+                            </div>
+                            <div className='text-lg mt-4'>
+                                <p>Examples of Evidence can be</p>
+                                <ul className='text-lg mt-4 list'>
+                                    <li> Clear photographs of the front and back of your residence, visa or ARC card</li>
+                                    <li> A letter from the Home Office</li>
+                                </ul>
+                            </div>
+                            <div className='mt-12 mb-10'>
+                                <p>Upload File</p>
+                                <input
+                                type="file"
+                                id="fileUpload"
+                                name="fileUpload"
+                                onChange={handleFileChange}
+                                className="mt-1 block w-full"
+                                />
+                                <div className="mt-4">
+                                    <button
+                                        type="button"
+                                        onClick={handleUpload}
+                                        className="px-4 py-2 bg-green-500 text-white rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                    >
+                                        Upload
+                                    </button>
+                                </div>
+                                {error && (
+                                    <div className="mt-4 text-red-600">
+                                        {error}
+                                    </div>
+                                )}
+                                {showTable && files.length > 0 && (
+                        <div className="mt-6">
+                            <table className="min-w-full divide-y divide-gray-200 mt-2">
+                                <thead className="bg-gray-50">
+                                    <tr className='text-center'>
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Attachment</th>
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-gray-200">
+                                    {files.map(file => (
+                                        <tr key={file.name}>
+                                            <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{file.name}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-500">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => handleRemoveFile(file.name)}
+                                                    className="bg-red-700 p-2 text-black hover:bg-black hover:text-white rounded-sm"
+                                                >
+                                                    X
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
+                            </div>
+                            
+                        </div>
+                    )}
+                    <div className='border border-b border-gray-300'></div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                         <div className="mt-4">
                             <label for="language" className="block font-medium text-gray-700">What is your first language? <span className="text-red-600">*</span></label>
                             <select id="language" 
@@ -443,3 +565,6 @@ const HTwo = ({ formData, setFormData, validateStep, showErrors, }) => {
 };
 
 export default HTwo;
+
+
+
